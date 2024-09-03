@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_blank" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:id="@+id/layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/fondo"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LLEGADA ESTIMADA"
+                android:fontFamily="@font/robotoblack"
+                android:textColor="@color/colorText"
+                android:textSize="11dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:05 - 00:20"
+                android:textColor="@color/colorText"
+                android:textSize="35dp"
+                android:fontFamily="@font/robotoblack"/>
+
+            <RelativeLayout
+                android:id="@+id/estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="10dp"
+                    android:orientation="horizontal"
+                    android:background="@color/colorred"/>
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="115dp"
+                    android:background="@color/colorred"/>
+
+                <LinearLayout
+                    android:layout_width="110dp"
+                    android:layout_height="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="230dp"
+                    android:background="@color/bton"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EL REPARTIDOR ESTÁ EN CAMINO"
+                android:fontFamily="@font/robotoblack"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorText"
+                android:textSize="11dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/view_blank"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fondo"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="DETALLE DEL PEDIDO"
+                android:backgroundTint="@color/redback"
+                android:layout_marginRight="5dp"
+                android:textSize="13dp"/>
+
+            <Button
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="AGREGAR PEDIDO"
+                android:backgroundTint="@color/bton"
+                android:textSize="13dp"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/info_window_imagen"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/plato"/>
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/info_window_imagen"
+                android:paddingLeft="10dp"
+                android:text="Chuleta de vaca carnivora"
+                android:textSize="22dp"
+                android:fontFamily="@font/robotoblack"/>
+
+            <TextView
+                android:id="@+id/snippetTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_below="@id/titleTextView"
+                android:layout_toRightOf="@id/info_window_imagen"
+                android:paddingLeft="10dp"
+                android:text="S/30.00"
+                android:fontFamily="@font/robotoblack"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOTAS DEL PRODUCTO"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="17dp"
+            android:fontFamily="@font/robotoblack"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SE INTENTARÁ SEGUIR LAS NOTAS PROPUESTAS POR EL USUARIO"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="15dp"
+            android:textSize="12dp"
+            android:fontFamily="@font/robotoblack"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Ingrese detalles del pedido"/>
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dirección: "
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorText"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Método de pago: "
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorText"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</RelativeLayout>

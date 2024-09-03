@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Realizar pedido"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDeliveryAddress"
+        android:hint="Dirección de entrega"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etInstructions"
+        android:hint="Añadir instrucciones"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Método de pago"
+        android:textSize="18sp"
+        android:layout_marginTop="45dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Efectivo -->
+        <RadioButton
+            android:id="@+id/rbEfectivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/imagenefectivo"
+            android:text="Efectivo"
+            android:textSize="16sp" />
+
+        <!-- Yape -->
+        <RadioButton
+            android:id="@+id/rbYape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/imageyape"
+            android:text="Yape"
+            android:textSize="16sp" />
+
+        <!-- Botón para agregar tarjeta -->
+        <Button
+            android:id="@+id/btnAddCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar tarjeta"
+            android:layout_marginTop="10dp"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="16dp">
+
+            <TableRow>
+                <TextView
+                    android:text="Subtotal" />
+                <TextView
+                    android:id="@+id/tvSubtotal"
+                    android:gravity="right"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Impuestos" />
+                <TextView
+                    android:id="@+id/tvTaxes"
+                    android:gravity="right"/>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+            <TableRow>
+                <TextView
+                    android:text="Total"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:gravity="right"
+                    android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pagar"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+</LinearLayout>
